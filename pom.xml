@@ -91,7 +91,7 @@
         <log4j.root>WARN</log4j.root>
 
 
-        <jdbc.cloudadmin.idletest>120</jdbc.cloudadmin.idletest>
+        <jdbc.finanzen.idletest>120</jdbc.finanzen.idletest>
         <jdbc.AESWeather.idletest>120</jdbc.AESWeather.idletest>
         <jdbc.Advertising.idletest>120</jdbc.Advertising.idletest>
 
@@ -418,336 +418,27 @@
 
 
             <!-- =============================== -->
-            <!-- Internal CloudServices Dependencies -->
+            <!-- Internal Finanzen Dependencies -->
             <!-- =============================== -->
             <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>database</artifactId>
+                <groupId>hansen.koeln.finanzen</groupId>
+                <artifactId>finanze-core</artifactId>
                 <version>${project.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>tools</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>interface</artifactId>
+                <groupId>hansen.koeln.finanzen</groupId>
+                <artifactId>finanze-base</artifactId>
                 <version>${project.version}</version>
                 <type>jar</type>
             </dependency>
             <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>rest-executor</artifactId>
+                <groupId>hansen.koeln.finanzen</groupId>
+                <artifactId>finanze-web</artifactId>
                 <version>${project.version}</version>
                 <type>war</type>
             </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>util</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>webutil</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>statistics</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>statistics-core</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>statistics-web</artifactId>
-                <version>${project.version}</version>
-                <type>war</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>base</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>base-core</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>base-web</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>hotel</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>hotel-core</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>hotel-web</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>conference</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>conference-core</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>conference-web</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>weather</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>weather-core</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>weather-web</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>weather-rest</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>rssfeed</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>rssfeed-core</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>rssfeed-web</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>rssfeed-rest</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>user</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>user-core</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>user-web</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>security</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>security-core</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>security-web</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>shop</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>shop-core</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>shop-web</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>apiusers</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>apiusers-core</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>apiusers-web</artifactId>
-                <version>${project.version}</version>
-                <type>war</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>apiusers-rest</artifactId>
-                <version>${project.version}</version>
-                <type>war</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>bigdata</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>bigdata-core</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>bigdata-web</artifactId>
-                <version>${project.version}</version>
-                <type>war</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>bigdata-rest</artifactId>
-                <version>${project.version}</version>
-                <type>war</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>background</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>ems-background</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>idc-background</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>liveview-background</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>ACS-background</artifactId>
-                <version>${project.version}</version>
-                <type>war</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>gpns-background</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>advertising</artifactId>
-                <type>pom</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>advertising-core</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>advertising-web</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>advertising-rest</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>assetmanager-core</artifactId>
-                <version>${project.version}</version>
-                <type>jar</type>
-            </dependency>
-            <dependency>
-                <groupId>com.acentic.cloudservices</groupId>
-                <artifactId>assetmanager-web</artifactId>
-                <type>war</type>
-                <version>${project.version}</version>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -858,7 +549,7 @@
                             <goal>write-project-properties</goal>
                         </goals>
                         <configuration>
-                            <outputFile>${project.build.outputDirectory}/cloudservices.properties</outputFile>
+                            <outputFile>${project.build.outputDirectory}/finanzen.properties</outputFile>
                         </configuration>
                     </execution>
                 </executions>
@@ -869,239 +560,34 @@
 
     <profiles>
         <profile>
-            <id>LaptopAlex</id>
-            <properties>
-                <shop.cloudStorage>c:/temp/cloudstorage</shop.cloudStorage>
-                <shop.productImageUrl>/ACS/shop/getProductImage?productid=</shop.productImageUrl>
-                <shop.shopBaseUrl>/ACS/shop/</shop.shopBaseUrl>
-                <shop.exportDir>c:/temp/cloudstorage/export/shop</shop.exportDir>
-                <shop.publicUrl>c:/temp/cloudstorage/export/shop</shop.publicUrl>
-                <shop.acknowledgeUrl>http://localhost:8443/ACS/rest/doAcknowledgeShop</shop.acknowledgeUrl>
-
-
-                <background.liveview.start>&lt;!--</background.liveview.start>
-                <background.liveview.end>--&gt;</background.liveview.end>
-                <background.rss.start>&lt;!--</background.rss.start>
-                <background.rss.end>--&gt;</background.rss.end>
-                <background.weather.start>&lt;!--</background.weather.start>
-                <background.weather.end>--&gt;</background.weather.end>
-
-                <acs.server.name>https://localhost:8443</acs.server.name>
-                <liveview.supportemail>alexander.ostrowski@acentic.com</liveview.supportemail>
-
-                <log4j.logpath>${project.build.directory}/log</log4j.logpath>
-                <log.org.springframework>INFO</log.org.springframework>
-                <log.org.apache.struts2>INFO</log.org.apache.struts2>
-                <log.com.opensymphony>WARN</log.com.opensymphony>
-                <log4j.com.acentic.liveview.background>TRACE</log4j.com.acentic.liveview.background>
-
-
-                <!--                TRUST STORE    -->
-                <system.truststore>c:/tools/java/keytool/cdsacentic.jks</system.truststore>
-
-                <!--                Statistics-->
-                <!-- 2. Broker is local, protocol is embedded in jvm   -->
-                <jms.broker.url>vm://embedded?brokerConfig=xbean:activemq.xml</jms.broker.url>
-                <jms.broker.rmi.url>service:jmx:rmi://localhost:${jmx.rmi.server.port}/jndi/rmi://localhost:${rmi.registry.port}/jmxrmi</jms.broker.rmi.url>
-                <jms.broker.mbean.objectName>org.apache.activemq:BrokerName=${jms.broker.name},Type=Broker</jms.broker.mbean.objectName>
-                <jms.broker.data.directory>C:\Temp\ActiveMQ-Data</jms.broker.data.directory>
-
-
-                <jdbc.cloudadmin.driverClassName>com.mysql.jdbc.Driver</jdbc.cloudadmin.driverClassName>
-                <jdbc.cloudadmin.url>jdbc:mysql://localhost:3306/cloud_admin</jdbc.cloudadmin.url>
-                <jdbc.cloudadmin.username>root</jdbc.cloudadmin.username>
-                <jdbc.cloudadmin.password></jdbc.cloudadmin.password>
-                <jdbc.cloudadmin.minPoolSize>1</jdbc.cloudadmin.minPoolSize>
-                <jdbc.cloudadmin.maxPoolSize>5</jdbc.cloudadmin.maxPoolSize>
-                <jdbc.cloudadmin.initialPoolSize>3</jdbc.cloudadmin.initialPoolSize>
-                <jdbc.cloudadmin.idletest>120</jdbc.cloudadmin.idletest>
-
-                <jdbc.AESWeather.driverClassName>com.mysql.jdbc.Driver</jdbc.AESWeather.driverClassName>
-                <jdbc.AESWeather.url>jdbc:mysql://localhost:3306/aes_weather</jdbc.AESWeather.url>
-                <jdbc.AESWeather.username>root</jdbc.AESWeather.username>
-                <jdbc.AESWeather.password></jdbc.AESWeather.password>
-                <jdbc.AESWeather.minPoolSize>1</jdbc.AESWeather.minPoolSize>
-                <jdbc.AESWeather.maxPoolSize>5</jdbc.AESWeather.maxPoolSize>
-                <jdbc.AESWeather.initialPoolSize>3</jdbc.AESWeather.initialPoolSize>
-                <jdbc.AESWeather.idletest>120</jdbc.AESWeather.idletest>
-
-                <jdbc.Advertising.driverClassName>com.mysql.jdbc.Driver</jdbc.Advertising.driverClassName>
-                <jdbc.Advertising.url>jdbc:mysql://localhost:3306/OpenY</jdbc.Advertising.url>
-                <jdbc.Advertising.username>root</jdbc.Advertising.username>
-                <jdbc.Advertising.password></jdbc.Advertising.password>
-                <jdbc.Advertising.minPoolSize>1</jdbc.Advertising.minPoolSize>
-                <jdbc.Advertising.maxPoolSize>5</jdbc.Advertising.maxPoolSize>
-                <jdbc.Advertising.initialPoolSize>3</jdbc.Advertising.initialPoolSize>
-                <jdbc.Advertising.idletest>0</jdbc.Advertising.idletest>
-
-                <jdbc.liveView.driverClassName>com.mysql.jdbc.Driver</jdbc.liveView.driverClassName>
-                <jdbc.liveView.url>jdbc:mysql://localhost:3306/liveview</jdbc.liveView.url>
-                <jdbc.liveView.username>root</jdbc.liveView.username>
-                <jdbc.liveView.password></jdbc.liveView.password>
-                <jdbc.liveView.minPoolSize>1</jdbc.liveView.minPoolSize>
-                <jdbc.liveView.maxPoolSize>5</jdbc.liveView.maxPoolSize>
-                <jdbc.liveView.initialPoolSize>3</jdbc.liveView.initialPoolSize>
-                <jdbc.liveView.idletest>120</jdbc.liveView.idletest>
-
-                <jdbc.Bigdata.driverClassName>com.mysql.jdbc.Driver</jdbc.Bigdata.driverClassName>
-                <jdbc.Bigdata.url>jdbc:mysql://localhost:3306/bigdata</jdbc.Bigdata.url>
-                <jdbc.Bigdata.username>root</jdbc.Bigdata.username>
-                <jdbc.Bigdata.password></jdbc.Bigdata.password>
-                <jdbc.Bigdata.minPoolSize>1</jdbc.Bigdata.minPoolSize>
-                <jdbc.Bigdata.maxPoolSize>5</jdbc.Bigdata.maxPoolSize>
-                <jdbc.Bigdata.initialPoolSize>3</jdbc.Bigdata.initialPoolSize>
-                <jdbc.Bigdata.idletest>120</jdbc.Bigdata.idletest>
-
-                <mail.url_reauthentication>http://localhost:8080/CloudServices/public/doUserTryLoginUnregistred</mail.url_reauthentication>
-                <assetManager.FFMPEG_EXE>cmd /c c:\\tools\\ffmpeg\\bin\\ffmpeg.exe</assetManager.FFMPEG_EXE>
-                <assetManager.cloudStorage>c:\cloudstorage\assetManager</assetManager.cloudStorage>
-                <assetManager.cloudStorageOld>c:\s\cloudstorage</assetManager.cloudStorageOld>
-                <sqlems>http://sql-ems/BadEMS/Rest</sqlems>
-
-            </properties>
-        </profile>
-        <profile>
-            <id>CloudTestServer</id>
-
-            <properties>
-                <shop.cloudStorage>/mnt/data/hotelstorage</shop.cloudStorage>
-                <shop.productImageUrl>/CloudServices/shop/getProductImage?productid=</shop.productImageUrl>
-                <shop.shopBaseUrl>/CloudServices/shop/</shop.shopBaseUrl>
-                <shop.exportDir>/mnt/data/shop</shop.exportDir>
-                <shop.publicUrl>http://192.168.1.191/shop</shop.publicUrl>
-                <shop.acknowledgeUrl>http://192.168.1.191/CloudServices/rest/doAcknowledgeShop</shop.acknowledgeUrl>
-
-
-                <maven.test.skip>true</maven.test.skip>
-                <background.liveview.start/>
-                <background.liveview.end/>
-                <background.rss.start/>
-                <background.rss.end/>
-                <background.geolocation.start/>
-                <background.geolocation.end/>
-                <background.idcsync.start/>
-                <background.idcsync.end/>
-                <background.emssync.start/>
-                <background.emssync.end/>
-
-                <acs.server.name>https://192.168.1.191</acs.server.name>
-                <liveview.supportemail>alexander.ostrowski@acentic.com</liveview.supportemail>
-
-                <log4j.logpath>/var/log/tomcat7</log4j.logpath>
-                <log.org.springframework>INFO</log.org.springframework>
-                <log.org.apache.struts2>INFO</log.org.apache.struts2>
-                <log.com.opensymphony>INFO</log.com.opensymphony>
-                <log.standard>DEBUG</log.standard>
-
-
-                <!--                TRUST STORE    -->
-                <system.truststore>/acentic/keystore/cdsacentic.jks</system.truststore>
-
-
-                <!--                Statistics-->
-
-
-                <jdbc.cloudadmin.driverClassName>com.mysql.jdbc.Driver</jdbc.cloudadmin.driverClassName>
-                <jdbc.cloudadmin.url>jdbc:mysql://localhost:3306/cloud_admin</jdbc.cloudadmin.url>
-                <jdbc.cloudadmin.username>root</jdbc.cloudadmin.username>
-                <jdbc.cloudadmin.password>prodac</jdbc.cloudadmin.password>
-                <jdbc.cloudadmin.minPoolSize>1</jdbc.cloudadmin.minPoolSize>
-                <jdbc.cloudadmin.maxPoolSize>10</jdbc.cloudadmin.maxPoolSize>
-                <jdbc.cloudadmin.initialPoolSize>5</jdbc.cloudadmin.initialPoolSize>
-
-                <jdbc.AESWeather.driverClassName>com.mysql.jdbc.Driver</jdbc.AESWeather.driverClassName>
-                <jdbc.AESWeather.url>jdbc:mysql://localhost:3306/aes_weather</jdbc.AESWeather.url>
-                <jdbc.AESWeather.username>root</jdbc.AESWeather.username>
-                <jdbc.AESWeather.password>prodac</jdbc.AESWeather.password>
-                <jdbc.AESWeather.minPoolSize>1</jdbc.AESWeather.minPoolSize>
-                <jdbc.AESWeather.maxPoolSize>10</jdbc.AESWeather.maxPoolSize>
-                <jdbc.AESWeather.initialPoolSize>5</jdbc.AESWeather.initialPoolSize>
-
-                <jdbc.Advertising.driverClassName>com.mysql.jdbc.Driver</jdbc.Advertising.driverClassName>
-                <jdbc.Advertising.url>jdbc:mysql://localhost:3306/OpenY</jdbc.Advertising.url>
-                <jdbc.Advertising.username>root</jdbc.Advertising.username>
-                <jdbc.Advertising.password>prodac</jdbc.Advertising.password>
-                <jdbc.Advertising.minPoolSize>1</jdbc.Advertising.minPoolSize>
-                <jdbc.Advertising.maxPoolSize>10</jdbc.Advertising.maxPoolSize>
-                <jdbc.Advertising.initialPoolSize>5</jdbc.Advertising.initialPoolSize>
-
-                <jdbc.liveView.driverClassName>com.mysql.jdbc.Driver</jdbc.liveView.driverClassName>
-                <jdbc.liveView.url>jdbc:mysql://localhost:3306/liveview</jdbc.liveView.url>
-                <jdbc.liveView.username>root</jdbc.liveView.username>
-                <jdbc.liveView.password>prodac</jdbc.liveView.password>
-                <jdbc.liveView.minPoolSize>1</jdbc.liveView.minPoolSize>
-                <jdbc.liveView.maxPoolSize>10</jdbc.liveView.maxPoolSize>
-                <jdbc.liveView.initialPoolSize>5</jdbc.liveView.initialPoolSize>
-                <jdbc.liveView.idletest>120</jdbc.liveView.idletest>
-
-                <jdbc.Bigdata.driverClassName>com.mysql.jdbc.Driver</jdbc.Bigdata.driverClassName>
-                <jdbc.Bigdata.url>jdbc:mysql://localhost:3306/bigdata</jdbc.Bigdata.url>
-                <jdbc.Bigdata.username>root</jdbc.Bigdata.username>
-                <jdbc.Bigdata.password>prodac</jdbc.Bigdata.password>
-                <jdbc.Bigdata.minPoolSize>1</jdbc.Bigdata.minPoolSize>
-                <jdbc.Bigdata.maxPoolSize>5</jdbc.Bigdata.maxPoolSize>
-                <jdbc.Bigdata.initialPoolSize>3</jdbc.Bigdata.initialPoolSize>
-                <jdbc.Bigdata.idletest>120</jdbc.Bigdata.idletest>
-
-                <mail.url_reauthentication>http://192.168.1.191/CloudServices/public/doUserTryLoginUnregistred</mail.url_reauthentication>
-
-                <assetManager.FFMPEG_PROBE>/usr/bin/ffprobe</assetManager.FFMPEG_PROBE>
-                <assetManager.FFMPEG_EXE>/usr/bin/ffmpeg</assetManager.FFMPEG_EXE>
-                <assetManager.cloudStorage>/acentic/data/hotelstorage</assetManager.cloudStorage>
-                <assetManager.cloudStorageOld>/acentic/data/hotelstorage/assetManager</assetManager.cloudStorageOld>
-
-                <!-- advertising CloudTestServer -->
-                <SystemSettings.MediaPhysicalDir>/acentic/data/acenticmedia/</SystemSettings.MediaPhysicalDir>
-                <SystemSettings.FFMPEG_CreateThumbnail>/opt/acentic/createThumbnail.sh</SystemSettings.FFMPEG_CreateThumbnail>
-                <SystemSettings.FFMPEG_CheckVideoFormat>/opt/acentic/checkVideoFormat.sh</SystemSettings.FFMPEG_CheckVideoFormat>
-                <SystemSettings.FFMPEG_convertToMPG2>/opt/acentic/convertToMPG2.sh</SystemSettings.FFMPEG_convertToMPG2>
-                <SystemSettings.FFMPEG_convertToMPG4>/opt/acentic/convertToMPG4.sh</SystemSettings.FFMPEG_convertToMPG4>
-
-            </properties>
-        </profile>
-        <profile>
-            <id>Alex</id>
+            <id>Hellboy</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <maven.test.skip>true</maven.test.skip>
-                <shop.cloudStorage>c:/cloudstorage/hotelstorage</shop.cloudStorage>
-                <shop.productImageUrl>/ACS/shop/getProductImage?productid=</shop.productImageUrl>
-                <shop.shopBaseUrl>/ACS/shop/</shop.shopBaseUrl>
-                <shop.exportDir>c:/cloudstorage/shop</shop.exportDir>
-                <shop.publicUrl>http://localhost/shop</shop.publicUrl>
-                <shop.acknowledgeUrl>http://localhost/CloudServices/rest/doAcknowledgeShop</shop.acknowledgeUrl>
+                <background.rss.start/>
+                <background.rss.end/>
 
                 <acs.server.name>https://localhost:8443</acs.server.name>
-                <liveview.supportemail>alexander.ostrowski@acentic.com</liveview.supportemail>
-                <liveview.showTicketUrl>http://localhost:8080/CloudServices/liveview/doShowTicket</liveview.showTicketUrl>
+                <liveview.supportemail>info@familie-hansen.name</liveview.supportemail>
 
                 <log4j.logpath>${project.build.directory}/log</log4j.logpath>
                 <log.org.springframework>INFO</log.org.springframework>
                 <log.org.apache.struts2>INFO</log.org.apache.struts2>
                 <log.com.opensymphony>WARN</log.com.opensymphony>
-                <log4j.com.acentic.liveview.background>TRACE</log4j.com.acentic.liveview.background>
 
-                <!--                TRUST STORE    -->
-                <system.truststore>c:/tools/java/keytool/cdsacentic.jks</system.truststore>
 
-                <!--                Statistics-->
-                <!-- 2. Broker is local, protocol is embedded in jvm   -->
-                <jms.broker.url>vm://embedded?brokerConfig=xbean:activemq.xml</jms.broker.url>
-                <jms.broker.rmi.url>service:jmx:rmi://localhost:${jmx.rmi.server.port}/jndi/rmi://localhost:${rmi.registry.port}/jmxrmi</jms.broker.rmi.url>
-                <jms.broker.mbean.objectName>org.apache.activemq:BrokerName=${jms.broker.name},Type=Broker</jms.broker.mbean.objectName>
-                <jms.broker.data.directory>C:\Temp\ActiveMQ-Data</jms.broker.data.directory>
+                <!--    Statistics  -->
 
-                <!--                jdbc -->
-                <jdbc.cloudadmin.driverClassName>com.mysql.jdbc.Driver</jdbc.cloudadmin.driverClassName>
-                <jdbc.cloudadmin.url>jdbc:mysql://localhost:3306/cloud_admin</jdbc.cloudadmin.url>
-                <jdbc.cloudadmin.username>root</jdbc.cloudadmin.username>
-                <jdbc.cloudadmin.password>prodac</jdbc.cloudadmin.password>
-                <jdbc.cloudadmin.minPoolSize>1</jdbc.cloudadmin.minPoolSize>
-                <jdbc.cloudadmin.maxPoolSize>5</jdbc.cloudadmin.maxPoolSize>
-                <jdbc.cloudadmin.initialPoolSize>3</jdbc.cloudadmin.initialPoolSize>
-                <jdbc.cloudadmin.idletest>120</jdbc.cloudadmin.idletest>
+
+                <jdbc.finanzen.driverClassName>com.mysql.jdbc.Driver</jdbc.finanzen.driverClassName>
+                <jdbc.finanzen.url>jdbc:mysql://localhost:3306/cloud_admin</jdbc.finanzen.url>
+                <jdbc.finanzen.username>root</jdbc.finanzen.username>
+                <jdbc.finanzen.password>prodac</jdbc.finanzen.password>
+                <jdbc.finanzen.minPoolSize>1</jdbc.finanzen.minPoolSize>
+                <jdbc.finanzen.maxPoolSize>5</jdbc.finanzen.maxPoolSize>
+                <jdbc.finanzen.initialPoolSize>3</jdbc.finanzen.initialPoolSize>
+                <jdbc.finanzen.idletest>0</jdbc.finanzen.idletest>
 
                 <jdbc.AESWeather.driverClassName>com.mysql.jdbc.Driver</jdbc.AESWeather.driverClassName>
                 <jdbc.AESWeather.url>jdbc:mysql://localhost:3306/aes_weather</jdbc.AESWeather.url>
@@ -1110,7 +596,7 @@
                 <jdbc.AESWeather.minPoolSize>1</jdbc.AESWeather.minPoolSize>
                 <jdbc.AESWeather.maxPoolSize>5</jdbc.AESWeather.maxPoolSize>
                 <jdbc.AESWeather.initialPoolSize>3</jdbc.AESWeather.initialPoolSize>
-                <jdbc.AESWeather.idletest>120</jdbc.AESWeather.idletest>
+                <jdbc.AESWeather.idletest>0</jdbc.AESWeather.idletest>
 
                 <jdbc.Advertising.driverClassName>com.mysql.jdbc.Driver</jdbc.Advertising.driverClassName>
                 <jdbc.Advertising.url>jdbc:mysql://localhost:3306/OpenY</jdbc.Advertising.url>
@@ -1119,7 +605,6 @@
                 <jdbc.Advertising.minPoolSize>1</jdbc.Advertising.minPoolSize>
                 <jdbc.Advertising.maxPoolSize>5</jdbc.Advertising.maxPoolSize>
                 <jdbc.Advertising.initialPoolSize>3</jdbc.Advertising.initialPoolSize>
-                <jdbc.Advertising.idletest>120</jdbc.Advertising.idletest>
 
                 <jdbc.liveView.driverClassName>com.mysql.jdbc.Driver</jdbc.liveView.driverClassName>
                 <jdbc.liveView.url>jdbc:mysql://localhost:3306/liveview</jdbc.liveView.url>
@@ -1128,108 +613,10 @@
                 <jdbc.liveView.minPoolSize>1</jdbc.liveView.minPoolSize>
                 <jdbc.liveView.maxPoolSize>5</jdbc.liveView.maxPoolSize>
                 <jdbc.liveView.initialPoolSize>3</jdbc.liveView.initialPoolSize>
-                <jdbc.liveView.idletest>120</jdbc.liveView.idletest>
-
-                <jdbc.Bigdata.driverClassName>com.mysql.jdbc.Driver</jdbc.Bigdata.driverClassName>
-                <jdbc.Bigdata.url>jdbc:mysql://localhost:3306/bigdata</jdbc.Bigdata.url>
-                <jdbc.Bigdata.username>root</jdbc.Bigdata.username>
-                <jdbc.Bigdata.password>prodac</jdbc.Bigdata.password>
-                <jdbc.Bigdata.minPoolSize>1</jdbc.Bigdata.minPoolSize>
-                <jdbc.Bigdata.maxPoolSize>5</jdbc.Bigdata.maxPoolSize>
-                <jdbc.Bigdata.initialPoolSize>3</jdbc.Bigdata.initialPoolSize>
-                <jdbc.Bigdata.idletest>120</jdbc.Bigdata.idletest>
-
-                <mail.url_reauthentication>http://localhost:8080/CloudServices/public/doUserTryLoginUnregistred</mail.url_reauthentication>
-
-                <!-- advertising Alex -->
-                <SystemSettings.MediaPhysicalDir>c:/s/bcenticmedia/</SystemSettings.MediaPhysicalDir>
-                <SystemSettings.FFMPEG_CreateThumbnail>/opt/acentic/createThumbnail.sh</SystemSettings.FFMPEG_CreateThumbnail>
-                <SystemSettings.FFMPEG_CheckVideoFormat>/opt/acentic/checkVideoFormat.sh</SystemSettings.FFMPEG_CheckVideoFormat>
-                <SystemSettings.FFMPEG_convertToMPG2>/opt/acentic/convertToMPG2.sh</SystemSettings.FFMPEG_convertToMPG2>
-                <SystemSettings.FFMPEG_convertToMPG4>/opt/acentic/convertToMPG4.sh</SystemSettings.FFMPEG_convertToMPG4>
-
+                <jdbc.liveView.idletest>0</jdbc.liveView.idletest>
             </properties>
         </profile>
-        <profile>
-            <id>Thomas</id>
-            <properties>
-                <acs.server.name>https://localhost:8443</acs.server.name>
-                <liveview.supportemail>thomas.kerkmann@acentic.com</liveview.supportemail>
 
-                <log4j.logpath>${project.build.directory}/log</log4j.logpath>
-                <log.org.springframework>INFO</log.org.springframework>
-                <log.org.apache.struts2>INFO</log.org.apache.struts2>
-                <log.com.opensymphony>WARN</log.com.opensymphony>
-
-                <!--                TRUST STORE    -->
-                <system.truststore>c:/tools/java/keytool/cdsacentic.jks</system.truststore>
-
-
-                <!--                Statistics-->
-                <!-- 2. Broker is local, protocol is embedded in jvm   -->
-                <jms.broker.url>vm://embedded?brokerConfig=xbean:activemq.xml</jms.broker.url>
-                <jms.broker.rmi.url>service:jmx:rmi://localhost:${jmx.rmi.server.port}/jndi/rmi://localhost:${rmi.registry.port}/jmxrmi</jms.broker.rmi.url>
-                <jms.broker.mbean.objectName>org.apache.activemq:BrokerName=${jms.broker.name},Type=Broker</jms.broker.mbean.objectName>
-                <jms.broker.data.directory>C:\Temp\ActiveMQ-Data</jms.broker.data.directory>
-
-
-                <!--                jdbc                  -->
-                <jdbc.cloudadmin.driverClassName>com.mysql.jdbc.Driver</jdbc.cloudadmin.driverClassName>
-                <jdbc.cloudadmin.url>jdbc:mysql://localhost:3306/cloud_admin</jdbc.cloudadmin.url>
-                <jdbc.cloudadmin.username>root</jdbc.cloudadmin.username>
-                <jdbc.cloudadmin.password>prodac</jdbc.cloudadmin.password>
-                <jdbc.cloudadmin.minPoolSize>1</jdbc.cloudadmin.minPoolSize>
-                <jdbc.cloudadmin.maxPoolSize>5</jdbc.cloudadmin.maxPoolSize>
-                <jdbc.cloudadmin.initialPoolSize>3</jdbc.cloudadmin.initialPoolSize>
-                <jdbc.cloudadmin.idletest>120</jdbc.cloudadmin.idletest>
-
-                <jdbc.AESWeather.driverClassName>com.mysql.jdbc.Driver</jdbc.AESWeather.driverClassName>
-                <jdbc.AESWeather.url>jdbc:mysql://localhost:3306/aes_weather</jdbc.AESWeather.url>
-                <jdbc.AESWeather.username>root</jdbc.AESWeather.username>
-                <jdbc.AESWeather.password>prodac</jdbc.AESWeather.password>
-                <jdbc.AESWeather.minPoolSize>1</jdbc.AESWeather.minPoolSize>
-                <jdbc.AESWeather.maxPoolSize>5</jdbc.AESWeather.maxPoolSize>
-                <jdbc.AESWeather.initialPoolSize>3</jdbc.AESWeather.initialPoolSize>
-                <jdbc.AESWeather.idletest>120</jdbc.AESWeather.idletest>
-
-                <jdbc.Advertising.driverClassName>com.mysql.jdbc.Driver</jdbc.Advertising.driverClassName>
-                <jdbc.Advertising.url>jdbc:mysql://localhost:3306/OpenY</jdbc.Advertising.url>
-                <jdbc.Advertising.username>root</jdbc.Advertising.username>
-                <jdbc.Advertising.password>prodac</jdbc.Advertising.password>
-                <jdbc.Advertising.minPoolSize>1</jdbc.Advertising.minPoolSize>
-                <jdbc.Advertising.maxPoolSize>5</jdbc.Advertising.maxPoolSize>
-                <jdbc.Advertising.initialPoolSize>3</jdbc.Advertising.initialPoolSize>
-                <jdbc.Advertising.idletest>120</jdbc.Advertising.idletest>
-
-                <jdbc.liveView.driverClassName>com.mysql.jdbc.Driver</jdbc.liveView.driverClassName>
-                <jdbc.liveView.url>jdbc:mysql://localhost:3306/liveview</jdbc.liveView.url>
-                <jdbc.liveView.username>root</jdbc.liveView.username>
-                <jdbc.liveView.password>prodac</jdbc.liveView.password>
-                <jdbc.liveView.minPoolSize>1</jdbc.liveView.minPoolSize>
-                <jdbc.liveView.maxPoolSize>5</jdbc.liveView.maxPoolSize>
-                <jdbc.liveView.initialPoolSize>3</jdbc.liveView.initialPoolSize>
-                <jdbc.liveView.idletest>120</jdbc.liveView.idletest>
-
-                <jdbc.Bigdata.driverClassName>com.mysql.jdbc.Driver</jdbc.Bigdata.driverClassName>
-                <jdbc.Bigdata.url>jdbc:mysql://localhost:3306/bigdata</jdbc.Bigdata.url>
-                <jdbc.Bigdata.username>root</jdbc.Bigdata.username>
-                <jdbc.Bigdata.password>prodac</jdbc.Bigdata.password>
-                <jdbc.Bigdata.minPoolSize>1</jdbc.Bigdata.minPoolSize>
-                <jdbc.Bigdata.maxPoolSize>5</jdbc.Bigdata.maxPoolSize>
-                <jdbc.Bigdata.initialPoolSize>3</jdbc.Bigdata.initialPoolSize>
-                <jdbc.Bigdata.idletest>120</jdbc.Bigdata.idletest>
-
-                <mail.url_reauthentication>http://localhost:8080/CloudServices/public/doUserTryLoginUnregistred</mail.url_reauthentication>
-
-                <!-- advertising Thomas -->
-                <SystemSettings.MediaPhysicalDir>c:/s/acenticmedia/</SystemSettings.MediaPhysicalDir>
-                <SystemSettings.FFMPEG_CreateThumbnail>/opt/acentic/createThumbnail.sh</SystemSettings.FFMPEG_CreateThumbnail>
-                <SystemSettings.FFMPEG_CheckVideoFormat>/opt/acentic/checkVideoFormat.sh</SystemSettings.FFMPEG_CheckVideoFormat>
-                <SystemSettings.FFMPEG_convertToMPG2>/opt/acentic/convertToMPG2.sh</SystemSettings.FFMPEG_convertToMPG2>
-                <SystemSettings.FFMPEG_convertToMPG4>/opt/acentic/convertToMPG4.sh</SystemSettings.FFMPEG_convertToMPG4>
-
-            </properties>
-        </profile>
         <profile>
             <id>Uli</id>
             <properties>
@@ -1256,14 +643,14 @@
                 <log.standard>DEBUG</log.standard>
 
 
-                <jdbc.cloudadmin.driverClassName>com.mysql.jdbc.Driver</jdbc.cloudadmin.driverClassName>
-                <jdbc.cloudadmin.url>jdbc:mysql://192.168.1.61:3306/cloud_admin</jdbc.cloudadmin.url>
-                <jdbc.cloudadmin.username>root</jdbc.cloudadmin.username>
-                <jdbc.cloudadmin.password>prodac</jdbc.cloudadmin.password>
-                <jdbc.cloudadmin.minPoolSize>1</jdbc.cloudadmin.minPoolSize>
-                <jdbc.cloudadmin.maxPoolSize>5</jdbc.cloudadmin.maxPoolSize>
-                <jdbc.cloudadmin.initialPoolSize>3</jdbc.cloudadmin.initialPoolSize>
-                <jdbc.cloudadmin.idletest>0</jdbc.cloudadmin.idletest>
+                <jdbc.finanzen.driverClassName>com.mysql.jdbc.Driver</jdbc.finanzen.driverClassName>
+                <jdbc.finanzen.url>jdbc:mysql://192.168.1.61:3306/cloud_admin</jdbc.finanzen.url>
+                <jdbc.finanzen.username>root</jdbc.finanzen.username>
+                <jdbc.finanzen.password>prodac</jdbc.finanzen.password>
+                <jdbc.finanzen.minPoolSize>1</jdbc.finanzen.minPoolSize>
+                <jdbc.finanzen.maxPoolSize>5</jdbc.finanzen.maxPoolSize>
+                <jdbc.finanzen.initialPoolSize>3</jdbc.finanzen.initialPoolSize>
+                <jdbc.finanzen.idletest>0</jdbc.finanzen.idletest>
 
                 <jdbc.AESWeather.driverClassName>com.mysql.jdbc.Driver</jdbc.AESWeather.driverClassName>
                 <jdbc.AESWeather.url>jdbc:mysql://192.168.1.61:3306/aes_weather</jdbc.AESWeather.url>
@@ -1343,14 +730,14 @@
                 <statistics.topic.name>cloudservices.statistics.laptop.uli.topic</statistics.topic.name>
                 <statistics.queue.name>cloudservices.statistics.laptop.uli.queue</statistics.queue.name>
 
-                <jdbc.cloudadmin.driverClassName>com.mysql.jdbc.Driver</jdbc.cloudadmin.driverClassName>
-                <jdbc.cloudadmin.url>jdbc:mysql://192.168.1.61:3306/cloud_admin</jdbc.cloudadmin.url>
-                <jdbc.cloudadmin.username>root</jdbc.cloudadmin.username>
-                <jdbc.cloudadmin.password>prodac</jdbc.cloudadmin.password>
-                <jdbc.cloudadmin.minPoolSize>1</jdbc.cloudadmin.minPoolSize>
-                <jdbc.cloudadmin.maxPoolSize>5</jdbc.cloudadmin.maxPoolSize>
-                <jdbc.cloudadmin.initialPoolSize>3</jdbc.cloudadmin.initialPoolSize>
-                <jdbc.cloudadmin.idletest>120</jdbc.cloudadmin.idletest>
+                <jdbc.finanzen.driverClassName>com.mysql.jdbc.Driver</jdbc.finanzen.driverClassName>
+                <jdbc.finanzen.url>jdbc:mysql://192.168.1.61:3306/cloud_admin</jdbc.finanzen.url>
+                <jdbc.finanzen.username>root</jdbc.finanzen.username>
+                <jdbc.finanzen.password>prodac</jdbc.finanzen.password>
+                <jdbc.finanzen.minPoolSize>1</jdbc.finanzen.minPoolSize>
+                <jdbc.finanzen.maxPoolSize>5</jdbc.finanzen.maxPoolSize>
+                <jdbc.finanzen.initialPoolSize>3</jdbc.finanzen.initialPoolSize>
+                <jdbc.finanzen.idletest>120</jdbc.finanzen.idletest>
 
                 <jdbc.AESWeather.driverClassName>com.mysql.jdbc.Driver</jdbc.AESWeather.driverClassName>
                 <jdbc.AESWeather.url>jdbc:mysql://192.168.1.61:3306/aes_weather</jdbc.AESWeather.url>
@@ -1399,87 +786,6 @@
 
         </profile>
         <profile>
-            <id>Hobbit</id>
-            <properties>
-                <background.rss.start/>
-                <background.rss.end/>
-
-                <liveview.supportemail>ulrich.hansen@acentic.com</liveview.supportemail>
-
-                <acs.server.name>https://localhost:18443</acs.server.name>
-
-                <log4j.logpath>/var/lib/tomcat7/logs</log4j.logpath>
-                <log.org.springframework>INFO</log.org.springframework>
-                <log.org.apache.struts2>INFO</log.org.apache.struts2>
-                <log.com.opensymphony>INFO</log.com.opensymphony>
-                <log.standard>DEBUG</log.standard>
-
-                <!--                TRUST STORE    -->
-                <system.truststore></system.truststore>
-
-                <!--                STATISTICS     -->
-                <!-- 3. Broker is extern   -->
-                <jms.broker.url>tcp://${jms.broker.remote.ip}:${jms.broker.remote.port}</jms.broker.url>
-                <jms.broker.rmi.url>service:jmx:rmi:///jndi/rmi://${jms.broker.remote.ip}:${jmx.rmi.server.port}/jmxrmi</jms.broker.rmi.url>
-                <jms.broker.mbean.objectName>org.apache.activemq:type=Broker,brokerName=broker.acentic</jms.broker.mbean.objectName>
-
-                <jdbc.cloudadmin.driverClassName>com.mysql.jdbc.Driver</jdbc.cloudadmin.driverClassName>
-                <jdbc.cloudadmin.url>jdbc:mysql://192.168.1.61:3306/cloud_admin</jdbc.cloudadmin.url>
-                <jdbc.cloudadmin.username>root</jdbc.cloudadmin.username>
-                <jdbc.cloudadmin.password>prodac</jdbc.cloudadmin.password>
-                <jdbc.cloudadmin.minPoolSize>1</jdbc.cloudadmin.minPoolSize>
-                <jdbc.cloudadmin.maxPoolSize>5</jdbc.cloudadmin.maxPoolSize>
-                <jdbc.cloudadmin.initialPoolSize>3</jdbc.cloudadmin.initialPoolSize>
-                <jdbc.cloudadmin.idletest>0</jdbc.cloudadmin.idletest>
-
-                <jdbc.AESWeather.driverClassName>com.mysql.jdbc.Driver</jdbc.AESWeather.driverClassName>
-                <jdbc.AESWeather.url>jdbc:mysql://192.168.1.61:3306/aes_weather</jdbc.AESWeather.url>
-                <jdbc.AESWeather.username>root</jdbc.AESWeather.username>
-                <jdbc.AESWeather.password>prodac</jdbc.AESWeather.password>
-                <jdbc.AESWeather.minPoolSize>1</jdbc.AESWeather.minPoolSize>
-                <jdbc.AESWeather.maxPoolSize>5</jdbc.AESWeather.maxPoolSize>
-                <jdbc.AESWeather.initialPoolSize>3</jdbc.AESWeather.initialPoolSize>
-                <jdbc.AESWeather.idletest>0</jdbc.AESWeather.idletest>
-
-                <jdbc.Advertising.driverClassName>com.mysql.jdbc.Driver</jdbc.Advertising.driverClassName>
-                <jdbc.Advertising.url>jdbc:mysql://192.168.1.61:3306/OpenY</jdbc.Advertising.url>
-                <jdbc.Advertising.username>root</jdbc.Advertising.username>
-                <jdbc.Advertising.password>prodac</jdbc.Advertising.password>
-                <jdbc.Advertising.minPoolSize>1</jdbc.Advertising.minPoolSize>
-                <jdbc.Advertising.maxPoolSize>5</jdbc.Advertising.maxPoolSize>
-                <jdbc.Advertising.initialPoolSize>3</jdbc.Advertising.initialPoolSize>
-                <jdbc.Advertising.idletest>0</jdbc.Advertising.idletest>
-
-                <jdbc.liveView.driverClassName>com.mysql.jdbc.Driver</jdbc.liveView.driverClassName>
-                <jdbc.liveView.url>jdbc:mysql://192.168.1.61:3306/liveview</jdbc.liveView.url>
-                <jdbc.liveView.username>root</jdbc.liveView.username>
-                <jdbc.liveView.password>prodac</jdbc.liveView.password>
-                <jdbc.liveView.minPoolSize>1</jdbc.liveView.minPoolSize>
-                <jdbc.liveView.maxPoolSize>5</jdbc.liveView.maxPoolSize>
-                <jdbc.liveView.initialPoolSize>3</jdbc.liveView.initialPoolSize>
-                <jdbc.liveView.idletest>0</jdbc.liveView.idletest>
-
-                <jdbc.Bigdata.driverClassName>com.mysql.jdbc.Driver</jdbc.Bigdata.driverClassName>
-                <jdbc.Bigdata.url>jdbc:mysql://192.168.1.61:3306/bigdata</jdbc.Bigdata.url>
-                <jdbc.Bigdata.username>root</jdbc.Bigdata.username>
-                <jdbc.Bigdata.password>prodac</jdbc.Bigdata.password>
-                <jdbc.Bigdata.minPoolSize>1</jdbc.Bigdata.minPoolSize>
-                <jdbc.Bigdata.maxPoolSize>5</jdbc.Bigdata.maxPoolSize>
-                <jdbc.Bigdata.initialPoolSize>3</jdbc.Bigdata.initialPoolSize>
-                <jdbc.Bigdata.idletest>120</jdbc.Bigdata.idletest>
-
-                <assetManager.FFMPEG_PROBE>cmd /c c:\tools\ffmpeg\bin\ffprobe.exe</assetManager.FFMPEG_PROBE>
-                <assetManager.FFMPEG_EXE>cmd /c c:\\tools\\ffmpeg\\bin\\ffmpeg.exe</assetManager.FFMPEG_EXE>
-                <assetManager.cloudStorage>c:\cloudstorage\assetManager</assetManager.cloudStorage>
-                <assetManager.cloudStorageOld>c:\s\cloudstorage</assetManager.cloudStorageOld>
-                <shop.cloudStorage>c:\s\cloudstorage</shop.cloudStorage>
-                <shop.exportDir>c:\s\cloudstorage\shop\export</shop.exportDir>
-
-            </properties>
-
-        </profile>
-
-        <profile>
             <id>Uli-integration-test</id>
             <properties>
                 <skip.integration.test>false</skip.integration.test>
@@ -1509,14 +815,14 @@
                 <jms.broker.mbean.objectName>org.apache.activemq:type=Broker,brokerName=broker.acentic</jms.broker.mbean.objectName>
 
 
-                <jdbc.cloudadmin.driverClassName>com.mysql.jdbc.Driver</jdbc.cloudadmin.driverClassName>
-                <jdbc.cloudadmin.url>jdbc:mysql://192.168.1.61:3306/cloud_admin</jdbc.cloudadmin.url>
-                <jdbc.cloudadmin.username>root</jdbc.cloudadmin.username>
-                <jdbc.cloudadmin.password>prodac</jdbc.cloudadmin.password>
-                <jdbc.cloudadmin.minPoolSize>1</jdbc.cloudadmin.minPoolSize>
-                <jdbc.cloudadmin.maxPoolSize>5</jdbc.cloudadmin.maxPoolSize>
-                <jdbc.cloudadmin.initialPoolSize>3</jdbc.cloudadmin.initialPoolSize>
-                <jdbc.cloudadmin.idletest>0</jdbc.cloudadmin.idletest>
+                <jdbc.finanzen.driverClassName>com.mysql.jdbc.Driver</jdbc.finanzen.driverClassName>
+                <jdbc.finanzen.url>jdbc:mysql://192.168.1.61:3306/cloud_admin</jdbc.finanzen.url>
+                <jdbc.finanzen.username>root</jdbc.finanzen.username>
+                <jdbc.finanzen.password>prodac</jdbc.finanzen.password>
+                <jdbc.finanzen.minPoolSize>1</jdbc.finanzen.minPoolSize>
+                <jdbc.finanzen.maxPoolSize>5</jdbc.finanzen.maxPoolSize>
+                <jdbc.finanzen.initialPoolSize>3</jdbc.finanzen.initialPoolSize>
+                <jdbc.finanzen.idletest>0</jdbc.finanzen.idletest>
 
                 <jdbc.AESWeather.driverClassName>com.mysql.jdbc.Driver</jdbc.AESWeather.driverClassName>
                 <jdbc.AESWeather.url>jdbc:mysql://192.168.1.61:3306/aes_weather</jdbc.AESWeather.url>
@@ -1558,155 +864,6 @@
 
         </profile>
 
-        <profile>
-            <id>acs.acentic.com</id>
-            <properties>
-                <maven.test.skip>true</maven.test.skip>
-
-                <login.mode.cas.enabled.start/>
-                <login.mode.cas.enabled.end/>
-                <login.mode.acs.enabled.start>&lt;!--</login.mode.acs.enabled.start>
-                <login.mode.acs.enabled.end>--&gt;</login.mode.acs.enabled.end>
-                <cas.server>https://cas.acentic.com/CasServer</cas.server>
-
-                <liveview.supportemail>support@acentic.com</liveview.supportemail>
-
-                <log4j.logpath>/var/log/tomcat6</log4j.logpath>
-                <log.org.springframework>ERROR</log.org.springframework>
-                <log.org.apache.struts2>ERROR</log.org.apache.struts2>
-                <log.com.opensymphony>ERROR</log.com.opensymphony>
-                <log.standard>WARN</log.standard>
-
-                <!--                TRUST STORE    -->
-                <system.truststore>/mnt/data/lib/keystore/cdsacentic.jks</system.truststore>
-
-                <!--    Statistics  -->
-
-                <jdbc.cloudadmin.driverClassName>com.mysql.jdbc.Driver</jdbc.cloudadmin.driverClassName>
-                <jdbc.cloudadmin.url>jdbc:mysql://acsdb.csbzp1p3p8vb.eu-west-1.rds.amazonaws.com:3306/cloud_admin</jdbc.cloudadmin.url>
-                <jdbc.cloudadmin.username>acsuser</jdbc.cloudadmin.username>
-                <jdbc.cloudadmin.password>prodac</jdbc.cloudadmin.password>
-                <jdbc.cloudadmin.minPoolSize>15</jdbc.cloudadmin.minPoolSize>
-                <jdbc.cloudadmin.maxPoolSize>70</jdbc.cloudadmin.maxPoolSize>
-                <jdbc.cloudadmin.initialPoolSize>15</jdbc.cloudadmin.initialPoolSize>
-                <jdbc.cloudadmin.idletest>120</jdbc.cloudadmin.idletest>
-
-                <jdbc.AESWeather.driverClassName>com.mysql.jdbc.Driver</jdbc.AESWeather.driverClassName>
-                <jdbc.AESWeather.url>jdbc:mysql://acsdb.csbzp1p3p8vb.eu-west-1.rds.amazonaws.com:3306/aes_weather</jdbc.AESWeather.url>
-                <jdbc.AESWeather.username>acsuser</jdbc.AESWeather.username>
-                <jdbc.AESWeather.password>prodac</jdbc.AESWeather.password>
-                <jdbc.AESWeather.minPoolSize>1</jdbc.AESWeather.minPoolSize>
-                <jdbc.AESWeather.maxPoolSize>10</jdbc.AESWeather.maxPoolSize>
-                <jdbc.AESWeather.initialPoolSize>5</jdbc.AESWeather.initialPoolSize>
-                <jdbc.AESWeather.idletest>120</jdbc.AESWeather.idletest>
-
-                <jdbc.Advertising.driverClassName>com.mysql.jdbc.Driver</jdbc.Advertising.driverClassName>
-                <jdbc.Advertising.url>jdbc:mysql://acsdb.csbzp1p3p8vb.eu-west-1.rds.amazonaws.com:3306/OpenY</jdbc.Advertising.url>
-                <jdbc.Advertising.username>acsuser</jdbc.Advertising.username>
-                <jdbc.Advertising.password>prodac</jdbc.Advertising.password>
-                <jdbc.Advertising.minPoolSize>1</jdbc.Advertising.minPoolSize>
-                <jdbc.Advertising.maxPoolSize>10</jdbc.Advertising.maxPoolSize>
-                <jdbc.Advertising.initialPoolSize>5</jdbc.Advertising.initialPoolSize>
-                <jdbc.Advertising.idletest>120</jdbc.Advertising.idletest>
-
-                <jdbc.liveView.driverClassName>com.mysql.jdbc.Driver</jdbc.liveView.driverClassName>
-                <jdbc.liveView.url>jdbc:mysql://acsdb.csbzp1p3p8vb.eu-west-1.rds.amazonaws.com:3306/liveview</jdbc.liveView.url>
-                <jdbc.liveView.username>acsuser</jdbc.liveView.username>
-                <jdbc.liveView.password>prodac</jdbc.liveView.password>
-                <jdbc.liveView.minPoolSize>10</jdbc.liveView.minPoolSize>
-                <jdbc.liveView.maxPoolSize>75</jdbc.liveView.maxPoolSize>
-                <jdbc.liveView.initialPoolSize>30</jdbc.liveView.initialPoolSize>
-                <jdbc.liveView.idletest>120</jdbc.liveView.idletest>
-
-                <jdbc.Bigdata.driverClassName>com.mysql.jdbc.Driver</jdbc.Bigdata.driverClassName>
-                <jdbc.Bigdata.url>jdbc:mysql://acsdb.csbzp1p3p8vb.eu-west-1.rds.amazonaws.com:3306/bigdata</jdbc.Bigdata.url>
-                <jdbc.Bigdata.username>acsuser</jdbc.Bigdata.username>
-                <jdbc.Bigdata.password>prodac</jdbc.Bigdata.password>
-                <jdbc.Bigdata.minPoolSize>1</jdbc.Bigdata.minPoolSize>
-                <jdbc.Bigdata.maxPoolSize>10</jdbc.Bigdata.maxPoolSize>
-                <jdbc.Bigdata.initialPoolSize>5</jdbc.Bigdata.initialPoolSize>
-                <jdbc.Bigdata.idletest>120</jdbc.Bigdata.idletest>
-
-                <!-- advertising acs.acentic.com -->
-                <SystemSettings.MediaPhysicalDir>/mnt/data/acenticmedia/</SystemSettings.MediaPhysicalDir>
-                <SystemSettings.FFMPEG_CreateThumbnail>/opt/acentic/createThumbnail.sh</SystemSettings.FFMPEG_CreateThumbnail>
-                <SystemSettings.FFMPEG_CheckVideoFormat>/opt/acentic/checkVideoFormat.sh</SystemSettings.FFMPEG_CheckVideoFormat>
-                <SystemSettings.FFMPEG_convertToMPG2>/opt/acentic/convertToMPG2.sh</SystemSettings.FFMPEG_convertToMPG2>
-                <SystemSettings.FFMPEG_convertToMPG4>/opt/acentic/convertToMPG4.sh</SystemSettings.FFMPEG_convertToMPG4>
-                <!-- Note: cleanup needs to run on the frontend server to date -->
-                <!--
-                <background.advertising.start/>
-                <background.advertising.end/>
-                -->
-
-            </properties>
-
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <skipTests>true</skipTests>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>Hellboy</id>
-            <properties>
-                <background.rss.start/>
-                <background.rss.end/>
-
-                <acs.server.name>https://localhost:8443</acs.server.name>
-                <liveview.supportemail>info@familie-hansen.name</liveview.supportemail>
-
-                <log4j.logpath>${project.build.directory}/log</log4j.logpath>
-                <log.org.springframework>INFO</log.org.springframework>
-                <log.org.apache.struts2>INFO</log.org.apache.struts2>
-                <log.com.opensymphony>WARN</log.com.opensymphony>
-
-
-                <!--    Statistics  -->
-
-
-                <jdbc.cloudadmin.driverClassName>com.mysql.jdbc.Driver</jdbc.cloudadmin.driverClassName>
-                <jdbc.cloudadmin.url>jdbc:mysql://localhost:3306/cloud_admin</jdbc.cloudadmin.url>
-                <jdbc.cloudadmin.username>root</jdbc.cloudadmin.username>
-                <jdbc.cloudadmin.password>prodac</jdbc.cloudadmin.password>
-                <jdbc.cloudadmin.minPoolSize>1</jdbc.cloudadmin.minPoolSize>
-                <jdbc.cloudadmin.maxPoolSize>5</jdbc.cloudadmin.maxPoolSize>
-                <jdbc.cloudadmin.initialPoolSize>3</jdbc.cloudadmin.initialPoolSize>
-                <jdbc.cloudadmin.idletest>0</jdbc.cloudadmin.idletest>
-
-                <jdbc.AESWeather.driverClassName>com.mysql.jdbc.Driver</jdbc.AESWeather.driverClassName>
-                <jdbc.AESWeather.url>jdbc:mysql://localhost:3306/aes_weather</jdbc.AESWeather.url>
-                <jdbc.AESWeather.username>root</jdbc.AESWeather.username>
-                <jdbc.AESWeather.password>prodac</jdbc.AESWeather.password>
-                <jdbc.AESWeather.minPoolSize>1</jdbc.AESWeather.minPoolSize>
-                <jdbc.AESWeather.maxPoolSize>5</jdbc.AESWeather.maxPoolSize>
-                <jdbc.AESWeather.initialPoolSize>3</jdbc.AESWeather.initialPoolSize>
-                <jdbc.AESWeather.idletest>0</jdbc.AESWeather.idletest>
-
-                <jdbc.Advertising.driverClassName>com.mysql.jdbc.Driver</jdbc.Advertising.driverClassName>
-                <jdbc.Advertising.url>jdbc:mysql://localhost:3306/OpenY</jdbc.Advertising.url>
-                <jdbc.Advertising.username>root</jdbc.Advertising.username>
-                <jdbc.Advertising.password>prodac</jdbc.Advertising.password>
-                <jdbc.Advertising.minPoolSize>1</jdbc.Advertising.minPoolSize>
-                <jdbc.Advertising.maxPoolSize>5</jdbc.Advertising.maxPoolSize>
-                <jdbc.Advertising.initialPoolSize>3</jdbc.Advertising.initialPoolSize>
-
-                <jdbc.liveView.driverClassName>com.mysql.jdbc.Driver</jdbc.liveView.driverClassName>
-                <jdbc.liveView.url>jdbc:mysql://localhost:3306/liveview</jdbc.liveView.url>
-                <jdbc.liveView.username>root</jdbc.liveView.username>
-                <jdbc.liveView.password>prodac</jdbc.liveView.password>
-                <jdbc.liveView.minPoolSize>1</jdbc.liveView.minPoolSize>
-                <jdbc.liveView.maxPoolSize>5</jdbc.liveView.maxPoolSize>
-                <jdbc.liveView.initialPoolSize>3</jdbc.liveView.initialPoolSize>
-                <jdbc.liveView.idletest>0</jdbc.liveView.idletest>
-            </properties>
-        </profile>
     </profiles>
 
     <repositories>
