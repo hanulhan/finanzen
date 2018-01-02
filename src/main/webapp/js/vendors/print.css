@@ -1,0 +1,104 @@
+/* @version 1.0 */
+body {
+    background: #fff !important;
+    color: #000;
+    font: 12pt "Helvetica Neue", "Roboto", Arial, "Droid Sans", sans-serif;
+    /* Zeichensatz auf Serifen umstellen */
+    text-align: justify;
+    /* Blocksatz */
+    quotes: "\201E" "\201C" "\201A" "\2018";
+}
+
+/* Seitenbreite */
+
+body,
+#container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#navigation,
+#formwizzard,
+#advertising {
+    display: none;
+}
+H1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+}
+
+/* Vermeidung von Seitenumbrüchen direkt nach einer Überschrift */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    page-break-after: avoid;
+}
+p,
+address,
+li,
+dt,
+dd {
+    font-size: 100%
+}
+
+/* Zeichensatz fuer Code Beispiele */
+code,
+pre {
+    font-family: "Courier New", Courier, mono
+}
+ul,
+ol {
+    list-style: square;
+    margin-left: 18pt;
+}
+li {
+    line-height: 1.6em;
+}
+a:link,
+a:visited {
+    background: transparent;
+    color: #520;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Sichtbare Auszeichnung der URLs von Links */
+a[href]:after {
+    content: " <"attr(href)">";
+    background-color: inherit;
+    color: #369;
+    font-style: italic;
+}
+
+/* Auszeichnung von Abkürzungen und Acronymen */
+
+abbr[title]:after,
+acronym[title]:after {
+    content: '(' attr(title) ')';
+    background-color: inherit;
+    color: #369;
+    font-style: italic;
+}
+*[cite]:after {
+    content: close-quote" (Quelle: "attr(cite)")";
+}
+q:before,
+blockquote:before {
+    content: open-quote;
+}
+q:after,
+blockquote:after {
+    content: close-quote;
+}
+#container:after {
+    content: "\ Alle Rechte vorbehalten. (c) 2007 Name, www.domain.de";
+    color: #999 !important;
+    font-size: 0.85em;
+    border-top: 1px solid #999;
+}
