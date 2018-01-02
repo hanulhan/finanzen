@@ -28,14 +28,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "account")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Account.findAll", query = "SELECT a FROM Account a")
-    , @NamedQuery(name = "Account.findById", query = "SELECT a FROM Account a WHERE a.id = :id")
-    , @NamedQuery(name = "Account.findByName", query = "SELECT a FROM Account a WHERE a.name = :name")
-    , @NamedQuery(name = "Account.findByType", query = "SELECT a FROM Account a WHERE a.type = :type")
-    , @NamedQuery(name = "Account.findByIban", query = "SELECT a FROM Account a WHERE a.iban = :iban")
-    , @NamedQuery(name = "Account.findByIdParent", query = "SELECT a FROM Account a WHERE a.idParent = :idParent")
-    , @NamedQuery(name = "Account.findByDescription", query = "SELECT a FROM Account a WHERE a.description = :description")
-    , @NamedQuery(name = "Account.findByPlaceholder", query = "SELECT a FROM Account a WHERE a.placeholder = :placeholder")})
+    @NamedQuery(name = "Account.findAll", query = "FROM EntityAccount a")
+    , @NamedQuery(name = "Account.findById", query = "SELECT a FROM EntityAccount a WHERE a.id = :id")
+    , @NamedQuery(name = "Account.findByName", query = "SELECT a FROM EntityAccount a WHERE a.name = :name")
+    , @NamedQuery(name = "Account.findByType", query = "SELECT a FROM EntityAccount a WHERE a.type = :type")
+    , @NamedQuery(name = "Account.findByIban", query = "SELECT a FROM EntityAccount a WHERE a.iban = :iban")
+    , @NamedQuery(name = "Account.findByIdParent", query = "SELECT a FROM EntityAccount a WHERE a.idParent = :idParent")
+    , @NamedQuery(name = "Account.findByDescription", query = "SELECT a FROM EntityAccount a WHERE a.description = :description")
+    , @NamedQuery(name = "Account.findByPlaceholder", query = "SELECT a FROM EntityAccount a WHERE a.placeholder = :placeholder")
+})
 public class EntityAccount implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -51,7 +52,7 @@ public class EntityAccount implements Serializable {
     @Column(name = "IBAN")
     private String iban;
     @Column(name = "idParent")
-    private long idParent;
+    private BigInteger idParent;
     @Column(name = "description")
     private String description;
     @Column(name = "Placeholder")
@@ -99,11 +100,11 @@ public class EntityAccount implements Serializable {
         this.iban = iban;
     }
 
-    public long getIdParent() {
+    public BigInteger getIdParent() {
         return idParent;
     }
 
-    public void setIdParent(long idParent) {
+    public void setIdParent(BigInteger idParent) {
         this.idParent = idParent;
     }
 
@@ -154,6 +155,10 @@ public class EntityAccount implements Serializable {
     @Override
     public String toString() {
         return "hanulhan.finanzen.base.Account[ id=" + id + " ]";
+    }
+
+    public void setIdParent(long idParent) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

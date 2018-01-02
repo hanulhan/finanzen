@@ -9,6 +9,7 @@ import hanulhan.finanzen.base.EntityAccount;
 import hanulhan.finanzen.beans.bank.BankBean;
 import hanulhan.finanzen.dao.account.AccountDAOInterface;
 import hanulhan.finanzen.util.SpringFinanzenBeansDef;
+import java.math.BigInteger;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.springframework.beans.BeansException;
@@ -105,7 +106,7 @@ public class AccountBean implements ApplicationContextAware {
         this.getEntityAccount().setIban(aIban);
     }
 
-    public long getIdParent() {
+    public BigInteger getIdParent() {
         return this.getEntityAccount().getIdParent();
     }
 

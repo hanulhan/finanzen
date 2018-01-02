@@ -28,11 +28,15 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "bank")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Bank.findAll", query = "SELECT b FROM Bank b")
-    , @NamedQuery(name = "Bank.findById", query = "SELECT b FROM Bank b WHERE b.id = :id")
-    , @NamedQuery(name = "Bank.findByName", query = "SELECT b FROM Bank b WHERE b.name = :name")
-    , @NamedQuery(name = "Bank.findByBic", query = "SELECT b FROM Bank b WHERE b.bic = :bic")})
+    @NamedQuery(name = "Bank.findAll", query = "FROM EntityBank b") 
+    , @NamedQuery(name = "Bank.findById", query = "SELECT b FROM EntityBank b WHERE b.id = :id")
+    , @NamedQuery(name = "Bank.findByName", query = "SELECT b FROM EntityBank b WHERE b.name = :name")
+    , @NamedQuery(name = "Bank.findByBic", query = "SELECT b FROM EntityBank b WHERE b.bic = :bic")
+        })
 public class EntityBank implements Serializable {
+
+    @OneToMany(mappedBy = "idBank")
+    private Collection<EntityAccount> accountCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -44,8 +48,6 @@ public class EntityBank implements Serializable {
     private String name;
     @Column(name = "BIC")
     private String bic;
-    @OneToMany(mappedBy = "idBank")
-    private Collection<EntityAccount> accountCollection;
 
     public EntityBank() {
     }
@@ -111,5 +113,6 @@ public class EntityBank implements Serializable {
     public String toString() {
         return "hanulhan.finanzen.base.Bank[ id=" + id + " ]";
     }
+
     
 }

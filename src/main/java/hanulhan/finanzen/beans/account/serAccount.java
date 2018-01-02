@@ -7,6 +7,7 @@ package hanulhan.finanzen.beans.account;
 
 import hanulhan.finanzen.base.EntityBank;
 import hanulhan.finanzen.beans.bank.serBank;
+import java.math.BigInteger;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,7 +21,7 @@ public class serAccount {
     private String name;
     private String type;
     private String iban;
-    private long idParent;
+    private BigInteger idParent;
     private String description;
     private Short placeholder;
     private serBank idBank;    
@@ -73,11 +74,11 @@ public class serAccount {
         this.iban = iban;
     }
 
-    public long getIdParent() {
+    public BigInteger getIdParent() {
         return idParent;
     }
 
-    public void setIdParent(long idParent) {
+    public void setIdParent(BigInteger idParent) {
         this.idParent = idParent;
     }
 
