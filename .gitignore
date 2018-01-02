@@ -1,18 +1,6 @@
 **/target
 **/*.bak
 **/*.versionBackup
-
-/statistics/statistics-core/nbproject/
-/rssfeed-rest/nbproject/
-/statistics - Kopie/statistics-core/nbproject/
-/tools/statistics-core/nbproject/
-/tools/broker/nbproject/
-/tools/messaging/nbproject/
-/weather/weather-core/nbproject/
-/weather/weather-web/nbproject/
-/base/base-core/nbproject/
-/rssfeed/rssfeed-core/nbproject/
-/rssfeed/rssfeed-rest/nbproject/
-desktop.ini
 .DS_Store
 /finanzen-base/nbproject/
+/nbproject/
