@@ -27,18 +27,17 @@ public class BankDAO implements BankDAOInterface {
     @PersistenceContext(unitName = "PersistenceFinanzen")
     private EntityManager em;
 
-    public EntityManager getEm() {
-        return em;
+    public BankDAO() {
+        super();
     }
 
-    public void setEm(EntityManager em) {
-        this.em = em;
-    }
-
+    
+    
+    
     @Override
     public List<EntityBank> getBankList() {
         try {
-            Query q1 = em.createNamedQuery("Bank.findall");
+            Query q1 = em.createNamedQuery("Bank.findAll");
             return q1.getResultList();
         } catch (Exception e) {
             LOGGER.log(Level.FATAL, "unable to load bank list", e);
@@ -64,7 +63,7 @@ public class BankDAO implements BankDAOInterface {
     public EntityBank findBankByName(String aName) {
         try {
             Query q1 = em.createNamedQuery("Bank.findByName");
-            q1.setParameter("Name", aName);
+            q1.setParameter("name", aName);
             return (EntityBank) q1.getSingleResult();
         } catch (NonUniqueResultException e) {
             LOGGER.log(Level.ERROR, "more than 1 bank found for name " + aName);
@@ -106,5 +105,15 @@ public class BankDAO implements BankDAOInterface {
         }
         return true;
         
+    }
+
+
+    public EntityManager getEm() {
+        return em;
+    }
+
+    @PersistenceContext(unitName = "PersistenceFinanzen")
+    public void setEm(EntityManager em) {
+        this.em = em;
     }
 }

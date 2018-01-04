@@ -42,6 +42,15 @@ public class BankBean implements ApplicationContextAware {
         this.id = id;
     }
 
+    public boolean InitializeByName(String aName)   {
+        entityBank= daoInterface.findBankByName(aName);
+        if (entityBank != null) {
+            this.id=entityBank.getId();
+            return true;
+        }
+        return false;
+    }
+    
     public boolean isLoaded() {
         return this.getEntityBank() != null;
     }
@@ -61,6 +70,7 @@ public class BankBean implements ApplicationContextAware {
 
         return entityBank;
     }
+    
 
     public long getId() {
         long myId = 0;
@@ -103,9 +113,18 @@ public class BankBean implements ApplicationContextAware {
         this.daoInterface = daoInterface;
     }
 
+
+
+
     @Override
     public void setApplicationContext(ApplicationContext ac) throws BeansException {
         this.applicationContext = ac;
+    }
+
+    @Override
+    public String toString()    {
+        String s= "BankBean {id= " + this.getId() + ", BIC: " + this.getBic() + "}";
+        return s;
     }
 
 }

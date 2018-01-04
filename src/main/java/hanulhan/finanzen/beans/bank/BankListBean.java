@@ -27,14 +27,30 @@ public class BankListBean implements ApplicationContextAware {
     
     @Autowired
     private ApplicationContext applicatioinContext;
-    private BankDAOInterface dAOInterface;
+    private BankDAOInterface daoInterface;
     private static final Logger LOGGER = Logger.getLogger(BankListBean.class);
 
+    public BankListBean() {
+        super();
+    }
+
+    public void remove (int i)  {
+        getItems().remove(i);
+    }
+    
+    public void add (BankBean bean) {
+        getItems().add(bean);
+    }
+
+    public int size()   {
+        return getItems().size();
+    }
+    
     public ArrayList<BankBean> getItems() {
         try {
         if (items == null)  {
             items = new ArrayList<>();
-            List<EntityBank> myBankList= this.dAOInterface.getBankList();
+            List<EntityBank> myBankList= this.daoInterface.getBankList();
             for (EntityBank temp : myBankList)  {
                 BankBean myBank = (BankBean)applicatioinContext.getBean(SpringFinanzenBeansDef.BANK_BEAN);
                 items.add(myBank);
@@ -59,13 +75,17 @@ public class BankListBean implements ApplicationContextAware {
         this.applicatioinContext= ac;
     }
 
-    public BankDAOInterface getdAOInterface() {
-        return dAOInterface;
+    public BankDAOInterface getDaoInterface() {
+        return daoInterface;
     }
 
-    public void setdAOInterface(BankDAOInterface dAOInterface) {
-        this.dAOInterface = dAOInterface;
+    public void setDaoInterface(BankDAOInterface daoInterface) {
+        this.daoInterface = daoInterface;
     }
+
+
+
+
 
     
 }

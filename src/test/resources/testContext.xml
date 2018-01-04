@@ -74,6 +74,7 @@
 
     
     <bean id="BankDAOImpl" class="hanulhan.finanzen.dao.bank.BankDAO" />
+    
     <bean id="bean_Bank" class="hanulhan.finanzen.beans.bank.BankBean" scope="prototype" >
         <property name="daoInterface" ref="BankDAOImpl" />
     </bean>
