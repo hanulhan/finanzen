@@ -5,6 +5,7 @@
  */
 package hanulhan.finanzen.beans.bank;
 
+import hanulhan.finanzen.beans.account.AccountBean;
 import hanulhan.finanzen.util.SpringFinanzenBeansDef;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -38,8 +39,8 @@ public class BankBeanTest  extends AbstractTransactionalJUnit4SpringContextTests
 
     @Transactional(value = "transactionManagerFinanzen")
     @Test
-    public void testSomeMethod() {
-        LOGGER.log(Level.DEBUG, "Testit");
+    public void testFindBank() {
+        LOGGER.log(Level.DEBUG, "testFindBank");
         BankListBean myBankListBean = (BankListBean) applicationContext.getBean(SpringFinanzenBeansDef.BANK_LIST_BEAN);
         List<BankBean> myBankList= myBankListBean.getItems();
 
@@ -48,6 +49,26 @@ public class BankBeanTest  extends AbstractTransactionalJUnit4SpringContextTests
         Assert.assertTrue("", myBank != null);
     }
 
+    @Transactional(value = "transactionManagerFinanzen")
+    @Test
+    public void testNewBank() {
+        LOGGER.log(Level.DEBUG, "testNewBank");
+
+        BankBean myBank= (BankBean)applicationContext.getBean(SpringFinanzenBeansDef.BANK_BEAN);
+        myBank.setName("MyTestBank");
+        myBank.setBic("BICTEST");
+        Assert.assertTrue("", myBank != null);
+        
+        AccountBean rootAcoount = (AccountBean)applicationContext.getBean(SpringFinanzenBeansDef.ACCOUNT_BEAN);
+
+        AccountBean myAccount = (AccountBean)applicationContext.getBean(SpringFinanzenBeansDef.ACCOUNT_BEAN);
+        myAccount.setName("TestAccount");
+        myAccount.setDescription("Description");
+
+        
+        
+    }
+    
     public EntityManager getEmFinanzen() {
         return emFinanzen;
     }

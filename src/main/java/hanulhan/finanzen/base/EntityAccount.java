@@ -29,13 +29,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Account.findAll", query = "FROM EntityAccount a")
-    , @NamedQuery(name = "Account.findById", query = "SELECT a FROM EntityAccount a WHERE a.id = :id")
-    , @NamedQuery(name = "Account.findByName", query = "SELECT a FROM EntityAccount a WHERE a.name = :name")
-    , @NamedQuery(name = "Account.findByType", query = "SELECT a FROM EntityAccount a WHERE a.type = :type")
-    , @NamedQuery(name = "Account.findByIban", query = "SELECT a FROM EntityAccount a WHERE a.iban = :iban")
-    , @NamedQuery(name = "Account.findByIdParent", query = "SELECT a FROM EntityAccount a WHERE a.idParent = :idParent")
-    , @NamedQuery(name = "Account.findByDescription", query = "SELECT a FROM EntityAccount a WHERE a.description = :description")
-    , @NamedQuery(name = "Account.findByPlaceholder", query = "SELECT a FROM EntityAccount a WHERE a.placeholder = :placeholder")
+    , @NamedQuery(name = "Account.findByTypeandName", query = "FROM EntityAccount a WHERE a.type:= type and a.name:= name")
+    , @NamedQuery(name = "Account.findById", query = "FROM EntityAccount a WHERE a.id = :id")
+    , @NamedQuery(name = "Account.findByName", query = "FROM EntityAccount a WHERE a.name = :name")
+    , @NamedQuery(name = "Account.findByType", query = "FROM EntityAccount a WHERE a.type = :type")
+    , @NamedQuery(name = "Account.findByIban", query = "FROM EntityAccount a WHERE a.iban = :iban")
+    , @NamedQuery(name = "Account.findByIdParent", query = "FROM EntityAccount a WHERE a.idParent = :idParent")
+    , @NamedQuery(name = "Account.findByDescription", query = "FROM EntityAccount a WHERE a.description = :description")
+    , @NamedQuery(name = "Account.findByPlaceholder", query = "FROM EntityAccount a WHERE a.placeholder = :placeholder")
 })
 public class EntityAccount implements Serializable {
 

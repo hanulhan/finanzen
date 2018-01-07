@@ -20,7 +20,8 @@ public interface BankDAOInterface {
 
     public EntityBank findBankByName(String aName);
 
-    public boolean update(EntityBank aEntityBank);
-
-    public boolean remove(EntityBank aEntityBank);
+    public boolean updateBank(EntityBank aEntityBank);
+    public boolean removeBank(EntityBank aEntityBank);
+    public boolean insertBank(EntityBank aEntityBank);
+    
 }

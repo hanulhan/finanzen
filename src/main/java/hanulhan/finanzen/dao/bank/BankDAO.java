@@ -79,7 +79,7 @@ public class BankDAO implements BankDAOInterface {
     
     @Transactional(value = "transactionManagerFinanzen")
     @Override
-    public boolean update(EntityBank aEntityBank) {
+    public boolean updateBank(EntityBank aEntityBank) {
         try {
             if (aEntityBank.getId() == null)
                 em.persist(aEntityBank);
@@ -95,7 +95,21 @@ public class BankDAO implements BankDAOInterface {
 
     @Transactional(value = "transactionManagerFinanzen")
     @Override
-    public boolean remove(EntityBank aEntityBank) {
+    public boolean insertBank(EntityBank aEntityBank) {
+        try {
+           em.persist(aEntityBank);
+        }
+        catch (Exception e) {
+            LOGGER.log(Level.FATAL, "unable to insert bank " + aEntityBank.toString(), e);
+            return false;
+        }
+        return true;
+        
+    }
+    
+    @Transactional(value = "transactionManagerFinanzen")
+    @Override
+    public boolean removeBank(EntityBank aEntityBank) {
         try {
            em.remove(aEntityBank);
         }

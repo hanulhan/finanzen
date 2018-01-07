@@ -16,12 +16,13 @@ import java.util.List;
 public interface AccountDAOInterface {
     public List<EntityAccount> getAccountList();
     public EntityAccount findAccount(long aId);
+    public EntityAccount findRootAccount();
     public EntityAccount findAccountByName(String aName);
     public List<EntityAccount> findAccountByType(String aType);
     public List<EntityAccount> findAccountByParentId(int aParentId);
     
-    public boolean update(EntityAccount aEntityAccount);
-
-    public boolean remove(EntityAccount aEntityAccount);
+    public boolean updateAccount(EntityAccount aEntityAccount);
+    public boolean insertAccount(EntityAccount aEntityAccount);
+    public boolean removeAccount(EntityAccount aEntityAccount);
 
 }

@@ -61,6 +61,23 @@ public class AccountDAO implements AccountDAOInterface {
     }
 
     @Override
+    public EntityAccount findRootAccount() {
+        try {
+            Query q1 = em.createNamedQuery("Bank.findByName");
+            q1.setParameter("Type", "Root");
+            return (EntityAccount) q1.getSingleResult();
+        } catch (NonUniqueResultException e) {
+            LOGGER.log(Level.ERROR, "more than 1 account found", e);
+            return null;
+        } catch (NoResultException e) {
+            return null;
+        } catch (Exception e) {
+            LOGGER.log(Level.FATAL, "unable to access root account", e);
+            return null;
+        }
+    }
+    
+    @Override
     public EntityAccount findAccountByName(String aName) {
         try {
             Query q1 = em.createNamedQuery("Bank.findByName");
@@ -106,9 +123,13 @@ public class AccountDAO implements AccountDAOInterface {
         }
     }
 
+    
+    
+    
+    
     @Transactional(value = "transactionManagerFinanzen")
     @Override
-    public boolean update(EntityAccount aEntityAccount) {
+    public boolean updateAccount(EntityAccount aEntityAccount) {
         try {
             if (aEntityAccount.getId() == null) {
                 em.persist(aEntityAccount);
@@ -124,7 +145,19 @@ public class AccountDAO implements AccountDAOInterface {
 
     @Transactional(value = "transactionManagerFinanzen")
     @Override
-    public boolean remove(EntityAccount aEntityAccount) {
+    public boolean insertAccount(EntityAccount aEntityAccount) {
+        try {
+            em.persist(aEntityAccount);
+        } catch (Exception e) {
+            LOGGER.log(Level.FATAL, "unable to insert account " + aEntityAccount.toString(), e);
+            return false;
+        }
+        return true;
+    }
+    
+    @Transactional(value = "transactionManagerFinanzen")
+    @Override
+    public boolean removeAccount(EntityAccount aEntityAccount) {
         try {
             em.remove(aEntityAccount);
         } catch (Exception e) {

@@ -3,8 +3,7 @@ CREATE TABLE `bank` (
    `ID` bigint(20) NOT NULL AUTO_INCREMENT,
    `Name` varchar(50) DEFAULT NULL,
    `BIC`  varchar(50) DEFAULT NULL,
-   
-PRIMARY KEY (`ID`),
+    PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 insert  into `bank` (`Name`,`BIC`) values ('Postbank','PBNKDEFF');
@@ -26,8 +25,8 @@ CREATE TABLE `account` (
    CONSTRAINT `FK_bank` FOREIGN KEY (`idBank`) REFERENCES `bank` (`ID`)
  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-insert into `account` (`Name`, `Type`, `description`) values ('Root Account', 'ROOT', 'Root Account');
-insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Aktiva', 'ASSET', '1', 'Aktiva');
-insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Aufwendungen', 'EXPENSE', '1', 'Aufwendungen');
-insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Erträge', 'INCOME', '1', 'Einkommen');
-insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Passiva', 'ROOT', 'Root Account');
+insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Root Account', 'ROOT',    null, 'Root Account');
+insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Aktiva',       'ASSET',   '1',  'Aktiva');
+insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Aufwendungen', 'EXPENSE', '1',  'Aufwendungen');
+insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Erträge',      'INCOME',  '1',  'Einkommen');
+insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Passiva',      'PASSIVA', '1',  'Passiva');
