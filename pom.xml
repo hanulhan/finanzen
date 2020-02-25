@@ -1,261 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.4.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.hanulhan</groupId>
+	<artifactId>finanzen</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>finanzen</name>
+	<description>Demo project for Spring Boot</description>
 
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>hanulhan.finanzen</groupId>
-    <artifactId>finanzen</artifactId>
-    <name>Finanzen</name>
-    <version>1.0.0</version>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
 
-    <packaging>war</packaging>
-    <description/>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	
-        <jdbc.url>jdbc:mysql://localhost:3306</jdbc.url>
-                
-        <!-- Maven compiler -->
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-                
-        <!--#############################################
-                        Log4j LOG LEVEL
-        #################################################-->
-        <log4j.logpath>/var/log/tomcat7</log4j.logpath>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
 
-        <log4j.root>WARN</log4j.root>
-        <log4j.com.mchange>WARN</log4j.com.mchange>
-        <log4j.org.hibernate>INFO</log4j.org.hibernate>
-        <log4j.org.springframework>INFO</log4j.org.springframework>
-        <log4j.org.apache.struts2>INFO</log4j.org.apache.struts2>
-        <log4j.com.acentic.finanzen>TRACE</log4j.com.acentic.finanzen>
-
-		
-        <!-- Hibernate, Mysql, jdbc -->
-        <!--        <version.org.hibernate>4.3.11.Final</version.org.hibernate>-->
-        <version.org.hibernate>4.3.11.Final</version.org.hibernate>
-        <version.mysql-connector-java>5.1.44</version.mysql-connector-java>
-        <hibernate.show_sql>false</hibernate.show_sql>
-        <version.org.eclipse.persistence>2.5.2</version.org.eclipse.persistence>
-
-        <!-- Java EE -->
-        <version.javaee-api>6.0</version.javaee-api>
-        <version.javax.transaction>1.1</version.javax.transaction>
-
-        <!-- Logging -->
-        <version.log4j>1.2.17</version.log4j>
-        <!-- APPACHE FILE UTILS -->
-        <version.commons-io>2.5</version.commons-io>
-        <!-- Spring -->
-        <!--        <version.org.springframework>4.2.7.RELEASE</version.org.springframework>-->
-        <version.org.springframework>4.3.11.RELEASE</version.org.springframework>
-        
-        <!-- Struts -->
-        <version.org.apache.struts>2.5.13</version.org.apache.struts>
-        <version.opensymphony.sitemesh>2.4.2</version.opensymphony.sitemesh>
-		
-        <!-- Testing -->
-        <skip.unit.test>false</skip.unit.test>
-        <skip.integration.test>true</skip.integration.test>
-        <version.junit>4.12</version.junit>
-		
-    </properties>
-	
-    <dependencies>
-        <!-- =============================== -->
-        <!-- Required dependencies -->
-        <!-- =============================== -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>${version.org.hibernate}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-c3p0</artifactId>
-            <version>${version.org.hibernate}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${version.org.hibernate}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${version.org.springframework}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-            <version>${version.org.springframework}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>${version.org.springframework}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${version.org.springframework}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${version.org.springframework}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jms</artifactId>
-            <version>${version.org.springframework}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>${version.org.springframework}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.transaction</groupId>
-            <artifactId>jta</artifactId>
-            <version>${version.javax.transaction}</version>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${version.log4j}</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${version.junit}</version>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${version.mysql-connector-java}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts2-spring-plugin</artifactId>
-            <version>${version.org.apache.struts}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts2-core</artifactId>
-            <version>${version.org.apache.struts}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts2-json-plugin</artifactId>
-            <version>${version.org.apache.struts}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.struts</groupId>
-            <artifactId>struts2-junit-plugin</artifactId>
-            <version>${version.org.apache.struts}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${version.commons-io}</version>
-        </dependency>
-        <dependency>
-            <groupId>opensymphony</groupId>
-            <artifactId>sitemesh</artifactId>
-            <version>${version.opensymphony.sitemesh}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>jsr250-api</artifactId>
-            <version>1.0</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
-
-    <profiles>
-        
-        <profile>
-            <id>Uli</id>
-            <properties>
-                <jdbc.finanzen.driverClassName>com.mysql.jdbc.Driver</jdbc.finanzen.driverClassName>
-                <jdbc.finanzen.url>${jdbc.url}/finanzen</jdbc.finanzen.url>
-                <jdbc.finanzen.username>root</jdbc.finanzen.username>
-                <jdbc.finanzen.password>prodac</jdbc.finanzen.password>
-                <jdbc.finanzen.minPoolSize>1</jdbc.finanzen.minPoolSize>
-                <jdbc.finanzen.maxPoolSize>5</jdbc.finanzen.maxPoolSize>
-                <jdbc.finanzen.initialPoolSize>3</jdbc.finanzen.initialPoolSize>
-                <jdbc.finanzen.idletest>120</jdbc.finanzen.idletest>
-            </properties>
-        </profile>
-    </profiles>
-
-
-    <build>
-        <finalName>${project.artifactId}-${project.version}</finalName>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-            <resource>
-                <directory>src/main/webapp/WEB-INF</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-        <testResources>
-            <testResource>
-                <directory>src/test/resources</directory>
-                <filtering>true</filtering>
-            </testResource>
-        </testResources>        
-
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <webResources>
-                        <resource>
-                            <directory>src/main/webapp</directory>
-                            <includes>
-                                <include>applicationContext.xml</include>
-                                <include>web.xml</include>
-                            </includes>
-                            <filtering>true</filtering>
-                        </resource>
-                        <resource>
-                            <directory>src/main/webapp/WEB-INF</directory>
-                            <includes>
-                                <include>**/*.xml</include>
-                            </includes>
-                            <filtering>true</filtering>
-                            <targetPath>WEB-INF</targetPath>
-                        </resource>
-                    </webResources>
-                </configuration>
-
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.2</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                    <debug>true</debug>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.0.1</version>
-            </plugin>
-        </plugins>
-    </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
