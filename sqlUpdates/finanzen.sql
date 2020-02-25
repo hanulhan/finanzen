@@ -1,3 +1,5 @@
+CREATE DATABASE finanzen
+
 
 CREATE TABLE `bank` (
    `ID` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -30,3 +32,14 @@ insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Aktiv
 insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Aufwendungen', 'EXPENSE', '1',  'Aufwendungen');
 insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Erträge',      'INCOME',  '1',  'Einkommen');
 insert into `account` (`Name`, `Type`, `idParent`, `description`) values ('Passiva',      'PASSIVA', '1',  'Passiva');
+
+
+// 23.02.2020
+CREATE TABLE `expense_category` (
+   `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+   `Name` varchar(50) DEFAULT NULL,
+   `idParent` bigint(20) DEFAULT NULL,
+    PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
