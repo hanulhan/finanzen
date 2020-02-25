@@ -17,6 +17,10 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	<!--
+	Link: https://www.codejava.net/frameworks/spring-boot/spring-boot-crud-example-with-spring-mvc-spring-data-jpa-thymeleaf-hibernate-mysql
+	-->
+
 
 	<dependencies>
 		<dependency>
